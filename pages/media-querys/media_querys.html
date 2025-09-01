@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <title>Media Querys</title>
+    <style>
+        /*body{
+            box-sizing: border-box;
+            margin: 0 auto;
+            border: 1px solid white;
+            width: 100vw;
+            min-height: 100vh;
+            border-radius: 10px;
+            padding: 0.25rem;
+        }
+        h1{
+            border: 1px solid white;
+            border-radius: 15px;
+            text-align: center;
+            width: fit-content;
+            padding: 1rem;
+            background-color: var(--fondo-secundario);
+        }
+
+        ---- FORMA VIEJA
+        @media (min-width: 1020px) and (max-width: 2000px){
+            body{
+                background-color: var(--color-terciario);
+            }
+        }*/
+
+        /* FORMA CHETA */
+        /*@media(1000px<= width <= 2000px){
+            h1{
+                background-color: var(--color-terciario);
+            }
+        }*/
+
+        /* EJEMPLO PRACTICO */
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        nav{
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid white;
+            background-color: var(--color-primario);
+        }
+        ul{
+            list-style: none;
+            margin: 0 auto;
+            max-width: 500px;
+            display: flex;
+            justify-content: space-between;
+        }
+        li{
+            margin: 5px;
+        }
+        a{
+            text-decoration: none;
+            color: var(--color-texto);
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        a:hover{
+            background-color: var(--color-terciario);
+            text-decoration: underline;
+        }
+        @media(width <= 300px){
+            nav{
+                padding: 0;
+                text-align: center;
+            }
+            ul{
+                flex-direction: column;
+            }
+            li{
+                margin: 0;
+                width: 100%;
+                border-radius: 0;
+            }
+            a{
+                display: inline-block;
+                width: 100%;
+                border-radius: 0;
+            }
+        }
+        </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    <!--<h1>Título</h1>-->
+    <!-- WIDTH: MIN ABSOLUTO DE 320PX -->
+</body>
+</html>

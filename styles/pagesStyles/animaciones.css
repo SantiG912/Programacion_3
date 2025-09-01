@@ -1,0 +1,54 @@
+:root{
+    --size: 3rem;
+    --primary-color: red;
+    --secondary-color: rgb(0, 255, 0);
+    --border-color: black;
+    --border: 1px solid var(--border-color);
+    --cube-size: 200px
+}
+
+.ball{
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: var(--border);
+    background-color: var(--primary-color);
+    animation: move-cube 10s linear infinite alternate,
+     pulse 10s linear infinite alternate;
+}
+
+@keyframes move-cube {
+    0%,
+    100% {
+        transform: translate(0px, 0px);
+    }
+    25%{
+        transform: translate(var(--cube-size), 0px);
+    }
+    50%{
+        transform: translate(var(--cube-size), var(--cube-size));
+    }
+
+    75%{
+        transform: translate(0px, var(--cube-size));
+    }
+}
+@keyframes pulse {
+    0%,
+    25%,
+    50%,
+    75%,
+    100% {
+        background-color: var(--secondary-color);
+    }
+    1%,
+    24%,
+    26%,
+    49%,
+    51%,
+    74%,
+    76%,
+    99% {
+        background-color: var(--primary-color);
+    }
+}   
