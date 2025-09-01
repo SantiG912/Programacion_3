@@ -1,0 +1,331 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #333;
+    color: #f3f3f3;
+    padding: 12px;
+}
+a{
+    color: #f3f3f3;
+    text-decoration: none;
+}
+.nav-container{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 45px;
+    align-items: center;
+    border: none;
+}
+.nav-container ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #242424;
+    gap: 12px;
+}
+.nav-container li{
+    display: inline;
+    float: left;
+    height: 100%;
+}
+.nav-container li a{
+    display: block;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 12px 15px 5px 15px;
+    font-size: 15px;
+}
+.nav-container li a:hover{
+    background-color: #267c62;
+}
+.nav-container li a:active{
+    background-color: #1e5e47af;
+}
+.content{
+    position: relative;
+    display: block;
+    width: 100%;
+    top: 60px;
+}
+.content img{
+    width: 500px;
+    height: 363px;
+    border: 1px solid #f3f3f3;
+    box-shadow: #267c62 2px 2px 8px;
+}
+
+
+/*Posicionamiento*/
+
+
+.caja{
+    width: 150px;
+    height: 150px;
+
+    color: black;
+}
+.cajaEstatica{
+    background-color:goldenrod;
+    position: static; /*Posicion por defecto*/
+                     /*No se pueden usar los atributos TOP, RIGHT, BOTTOM, LEFT*/
+}
+
+.cajaRelativa{
+    background-color: red;
+    position: relative;/* Con respecto a la posición que ocupa por defecto */
+    /* Se puede */
+    top: 50px;
+    right: 50px;
+    bottom: 2px;
+    left: 50px;
+    z-index: 1;
+}
+
+.cajaAbsoluta{
+    background-color: blueviolet; /* Con respecto a su contenedor posicionado más cercano si no es estático */
+    position: absolute;
+    right: 2px;
+    transform: translate(-50%, -50%);
+}
+.cajaFija{
+    background-color: yellowgreen;
+    position: fixed;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    right: 1px;
+    bottom: 1px;
+}
+.cajaSticky{
+    background-color: aquamarine;
+    position:sticky;
+    width: 100%;
+    height: 50px;
+    top: 0;
+}
+
+
+/*Box model*/
+
+
+.box{
+    border: 2px solid black;
+    padding: 10px;
+    margin-left: 5px;
+    max-height: 50px;
+    max-width: 50%;
+    overflow-y: scroll;
+
+    background-color: grey;
+}
+
+
+/*Pseudoelementos*/
+
+
+.tooltip{
+    display: inline-flex;
+    border: 1px solid #f0f0f0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip::after{
+    content: attr(data-mensaje);
+    position: absolute;
+    left: 22px;
+
+    width: max-content;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 2px 4px;
+
+    opacity: 0;
+    transition: all 250ms linear;
+}.tooltip:hover::after{
+    opacity: 1;
+}
+.boton{
+    background-color: #111;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 5px 10px;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.boton::after{
+    content: attr(data-abajo);
+    opacity: 0;
+    transition: all 250ms linear;
+}
+.boton:hover::after{
+    display: inline-flex;
+    opacity: 1;
+}
+.boton::before{
+    content: attr(data-arriba);
+    opacity: 0;
+    transition: all 250ms linear;
+}
+.boton:hover::before{
+    display: inline-flex;
+    opacity: 1;
+}
+.boton-buy{
+    all: unset;
+    width: 30px;
+    text-align: center;
+    padding: 2px 8px;
+    border: 2px solid rgb(8, 56, 8);
+    background-color: green;
+    color: #f3f3f3;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 250ms linear;
+    overflow: hidden;
+    position: relative;
+}
+
+.boton-buy:hover{
+    background-color: rgb(0, 255, 0);
+    letter-spacing: 30px;
+    color: blue;
+}
+
+.boton-buy::before{
+    content: "u";
+    color: yellow;
+    position: absolute;
+    bottom: 2px;
+    left: 19px;
+    transition: 200ms;
+    opacity: 0;
+}
+.boton-buy::after{
+    content: "y";
+    color: red;
+    position: absolute;
+    bottom: 2px;
+    left: 28px;
+    transition: all 300ms;
+    opacity: 0;
+}
+
+.boton-buy:hover::before, .boton-buy:hover::after{
+    translate: translateY(-17px);
+    transition: all 250ms linear;
+    opacity: 1;
+}
+
+/* .titulo{
+    color: #f0f0f0;
+}
+.titulo::first-letter{
+    color: grey;
+}
+
+.titulo::after{
+    content: "!!";
+    color: grey
+}
+
+.titulo::before{
+    content: "¡¡";
+    color: gray;
+} */
+
+
+/*Variables*/
+
+
+:root{
+    --color-default: #8b2828;
+    --default: 20px;
+    --child: 2;
+}
+.titulo{
+    color: var(--color-default);
+}
+.seccion{
+    color: var(--color-default);
+    --otro-color: #a34591;
+}
+.seccion_texto{
+    color: var(--color-default);
+}
+.ball{
+    width: var(--default);
+    height: var(--default);
+    border: 1px solid var(--color-default);
+    border-radius: 50%;
+    background-color: #a81440;
+}
+.mis_bolas{
+    display: flex;
+    gap: 5px;
+}
+.ball:nth-child(2){
+    width: calc(var(--default) + var(--default) * (var(--child)/10));
+    height: calc(var(--default) + var(--default) * (var(--child)/10));
+}
+.ball:nth-child(3){
+    --child: 4;
+    width: calc(var(--default) + var(--default) * (var(--child)/10));
+    height: calc(var(--default) + var(--default) * (var(--child)/10));
+}
+.ball:nth-child(4){
+    --child: 8;
+    width: calc(var(--default) + var(--default) * (var(--child)/10));
+    height: calc(var(--default) + var(--default) * (var(--child)/10));
+}
+.ball:nth-child(5){
+    --child: 16;
+    width: calc(var(--default) + var(--default) * (var(--child)/10));
+    height: calc(var(--default) + var(--default) * (var(--child)/10));
+}
+.ball:nth-child(6){
+    --child: 32;
+    width: calc(var(--default) + var(--default) * (var(--child)/10));
+    height: calc(var(--default) + var(--default) * (var(--child)/10));
+}
+span{
+    border: 1px solid var(--otro-color);
+    padding: 2px;
+}
+.inicio{
+    padding: 5px;
+    border: 1px solid var(--color-default);
+}
+.inicio>span{
+    color: green;
+}
+.inicio~div{
+    color: green;
+}
+/*
+(espacio) hijo lejano
+> hijo directo
++ hermano
+~ hermano lejano
+METER EFECTO AL PADRE USANDO AL HIJO <<<<<<<<<<<<<-------------
+*/

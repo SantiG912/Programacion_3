@@ -1,0 +1,6 @@
+/*@import url(styles.css);*/
+@import url(./indexPage/variables.css);
+@import url(./indexPage/base.css);
+@import url(./indexPage/navbar.css);
+@import url(./indexPage/footer.css);
+@import url(./indexPage/buttons.css);
