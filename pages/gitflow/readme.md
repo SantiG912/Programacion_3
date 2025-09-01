@@ -13,7 +13,7 @@ El proyecto trata de _**GitFlow**_.
 - [Google](https://www.google.com)
 ---
 
-### Estamos en MAIN
+### Estamos en RELEASE
 
 Main -> Hotfix -> Release -> Feature* -> Develop -> Feature*
 
